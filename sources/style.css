@@ -83,6 +83,7 @@ ul, li {
 .widget__list {
     display: flex;
     width: 100%;
+    overflow: hidden;
 }
 
 .widget__item {
@@ -95,6 +96,7 @@ ul, li {
     margin: 0 5px;
     padding: 20px 40px 30px;
     width: 24%;
+    flex-shrink: 0;
 }
 
 .widget__day {
