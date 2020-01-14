@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('fonts/OpenSans-Bold.eot');
+    src: url('fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/OpenSans-Bold.woff') format('woff'),
+    url('fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('fonts/OpenSans-Regular.eot');
+    src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/OpenSans-Regular.woff') format('woff'),
+    url('fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    color: black;
+    font-family: 'Open Sans Regular', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+h1, h3 { margin: 0; }
+
+p { margin: 0; }
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 100px 100px;
+}
+
+.widget {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.widget__top {
+    align-items: baseline;
+    display: flex;
+    line-height: 40px;
+    margin-bottom: 50px;
+}
+
+.widget__title {
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: 36px;
+    margin-right: 20px;
+}
+
+.widget__location {
+    color: #4c4c4c;
+    font-size: 20px;
+}
+
+.widget__slider {
+    position: relative;
+    width: 100%;
+}
+
+.widget__list {
+    display: flex;
+    width: 100%;
+}
+
+.widget__item {
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 5px;
+    padding: 20px 40px 30px;
+    width: 24%;
+}
+
+.widget__day {
+    color: #4c4c4c;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.widget__day--current {
+    color: black;
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+.widget__date {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 20px;
+}
+
+.widget__icon {
+    height: 70px;
+    margin-bottom: 20px;
+    width: 70px;
+}
+
+.widget__temperature-day {
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    margin-bottom: 10px;
+}
+
+.widget__temperature-night {
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+.widget__cloudiness {
+    color: #4c4c4c;
+    line-height: 24px;
+}
+
+.widget__button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: calc(50% - 30px);
+}
+
+.widget__button--prev {
+    left: -80px;
+    transform: rotate(180deg);
+}
+.widget__button--next { right: -80px; }
+.widget__button:hover svg { fill: #4c4c4c; }
