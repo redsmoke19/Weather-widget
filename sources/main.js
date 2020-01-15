@@ -9,11 +9,13 @@ var weatherImage = {
     snow: `<svg class="widget__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve" width="70px" height="70px"><path style="fill:#92C7D3;" d="M426.208,158.964c-1.12,0-42.648,0-42.648,0c0.744-8.16,1.24-9.968,1.256-14.744  c0.128-42.672-28.36-80.592-70.032-89.776c-23.752-5.232-46.424-1.68-65.184,8.44c-22.888-34.064-60.808-57.2-104.272-59.856  c-5.592-0.768-11.256-1.304-17.056-1.304C57.432,1.724,0,60.948,0,134.012c0,38.072,15.688,72.288,40.648,96.424  c22.072,24.488,52.72,40.304,89.008,42.936c0,0,295.432,1.464,296.552,1.464c29.712,0,53.792-25.936,53.792-57.928  C480,184.9,455.912,158.964,426.208,158.964z"/><g><circle style="fill:#BEDDE5;" cx="63.064" cy="325.34" r="24.936"/><circle style="fill:#BEDDE5;" cx="432.96" cy="335.236" r="24.936"/><circle style="fill:#BEDDE5;" cx="207.064" cy="453.34" r="24.936"/><path style="fill:#BEDDE5;" d="M272,334.276h-12.688l8.976-8.976c3.128-3.128,3.128-8.184,0-11.312s-8.184-3.128-11.312,0   L248,322.964v-12.688c0-4.416-3.584-8-8-8s-8,3.584-8,8v12.688l-8.976-8.976c-3.128-3.128-8.184-3.128-11.312,0   s-3.128,8.184,0,11.312l8.976,8.976H208c-4.416,0-8,3.584-8,8s3.584,8,8,8h12.688l-8.976,8.976c-3.128,3.128-3.128,8.184,0,11.312   c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344l8.976-8.976v12.688c0,4.416,3.584,8,8,8c4.416,0,8-3.584,8-8v-12.688   l8.976,8.976c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344c3.128-3.128,3.128-8.184,0-11.312l-8.976-8.976H272   c4.416,0,8-3.584,8-8S276.416,334.276,272,334.276z"/><path style="fill:#BEDDE5;" d="M416,422.276h-12.688l8.976-8.976c3.128-3.128,3.128-8.184,0-11.312s-8.184-3.128-11.312,0   L392,410.964v-12.688c0-4.416-3.584-8-8-8s-8,3.584-8,8v12.688l-8.976-8.976c-3.128-3.128-8.184-3.128-11.312,0   s-3.128,8.184,0,11.312l8.976,8.976H352c-4.416,0-8,3.584-8,8s3.584,8,8,8h12.688l-8.976,8.976c-3.128,3.128-3.128,8.184,0,11.312   c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344l8.976-8.976v12.688c0,4.416,3.584,8,8,8s8-3.584,8-8v-12.688   l8.976,8.976c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344c3.128-3.128,3.128-8.184,0-11.312l-8.976-8.976H416   c4.416,0,8-3.584,8-8S420.416,422.276,416,422.276z"/><path style="fill:#BEDDE5;" d="M72,430.276H59.312l8.976-8.976c3.128-3.128,3.128-8.184,0-11.312s-8.184-3.128-11.312,0L48,418.964   v-12.688c0-4.416-3.584-8-8-8s-8,3.584-8,8v12.688l-8.976-8.976c-3.128-3.128-8.184-3.128-11.312,0s-3.128,8.184,0,11.312   l8.976,8.976H8c-4.416,0-8,3.584-8,8s3.584,8,8,8h12.688l-8.976,8.976c-3.128,3.128-3.128,8.184,0,11.312   c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344L32,457.588v12.688c0,4.416,3.584,8,8,8s8-3.584,8-8v-12.688   l8.976,8.976c1.56,1.56,3.608,2.344,5.656,2.344s4.096-0.784,5.656-2.344c3.128-3.128,3.128-8.184,0-11.312l-8.976-8.976H72   c4.416,0,8-3.584,8-8S76.416,430.276,72,430.276z"/></g></svg>`,
   }
 
+  var MONTH = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  var WEEK_DAY = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
 var weatherData = [
   {
     date: {
-      day: '12 января',
+      day: 1578772800000,
       week: 'Воскресенье'
     },
     temperature: {
@@ -28,7 +30,7 @@ var weatherData = [
   },
   {
     date: {
-      day: '13 января',
+      day: 1578859200000,
       week: 'Понедельник'
     },
     temperature: {
@@ -43,7 +45,7 @@ var weatherData = [
   },
   {
     date: {
-      day: '14 января',
+      day: 1578945600000,
       week: 'Вторник'
     },
     temperature: {
@@ -59,7 +61,7 @@ var weatherData = [
   },
   {
     date: {
-      day: '15 января',
+      day: 1579032000000,
       week: 'Среда'
     },
     temperature: {
@@ -74,7 +76,7 @@ var weatherData = [
   },
   {
     date: {
-      day: '16 января',
+      day: 1579118400000,
       week: 'Четверг'
     },
     temperature: {
@@ -89,7 +91,7 @@ var weatherData = [
   },
   {
     date: {
-      day: '17 января',
+      day: 1579204800000,
       week: 'Пятница'
     },
     temperature: {
@@ -113,15 +115,16 @@ var weatherTempalte = document.querySelector('#weather-template').content.queryS
 function getWeatherItem(object) {
   var weatherElement = weatherTempalte.cloneNode(true);
   var weatherElementDay = weatherElement.querySelector('.widget__day');
+  var widgetData = new Date(object.date.day);
   if (object.current) {
     weatherElementDay.textContent = 'Сегодня';
     weatherElementDay.classList.add('widget__day--current');
-    headerDay.textContent = object.date.day + ',';
-    headerWeek.textContent = object.date.week;
+    headerDay.textContent = widgetData.getDate() + ' ' + ' ' + MONTH[widgetData.getMonth()] + ',';
+    headerWeek.textContent = WEEK_DAY[widgetData.getDay()];
   } else {
-    weatherElementDay.textContent = object.date.week;
+    weatherElementDay.textContent = WEEK_DAY[widgetData.getDay()];
   }
-  weatherElement.querySelector('.widget__date').textContent = object.date.day;
+  weatherElement.querySelector('.widget__date').textContent = widgetData.getDate() + ' ' + MONTH[widgetData.getMonth()];
   weatherElement.querySelector('.widget__temperature-day').textContent = `днем -${object.temperature.day}°`;
   weatherElement.querySelector('.widget__temperature-night').textContent = `ночью -${object.temperature.night}°`; 
   weatherElement.querySelector('.widget__cloudiness').textContent = object.cloudiness;
