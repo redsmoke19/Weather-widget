@@ -47,7 +47,8 @@ ul, li {
 
 .container {
     margin: 0 auto;
-    padding: 100px 100px;
+    padding-top: 100px;
+    width: 1000px;
 }
 
 .widget {
@@ -93,10 +94,14 @@ ul, li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 5px;
+    /* margin: 0 5px; */
     padding: 20px 40px 30px;
-    width: 24%;
+    width: 25%;
     flex-shrink: 0;
+}
+
+.widget__item:not(:last-child) {
+    border-right: 5px solid #f1f1f1;
 }
 
 .widget__day {
@@ -137,7 +142,7 @@ ul, li {
     margin-bottom: 30px;
 }
 
-.widget__cloudiness {
+.widget__cloudiness, .widget__precipitation {
     color: #4c4c4c;
     line-height: 24px;
 }
