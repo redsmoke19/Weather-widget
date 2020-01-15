@@ -86,6 +86,18 @@ let weatherData = [
             rain: false,
         },
     },
+    {
+        date: 1579464000000,
+        temperature: {
+            day: 7,
+            night: 11,
+        },
+        cloudiness: 'Облачно',
+        precipitation: {
+            snow: false,
+            rain: false,
+        },
+    },
 ];
 
 let headerDay = document.querySelector('#day');
@@ -139,17 +151,20 @@ function moveSlider() {
     for (let i = 0; i < sliderItems.length; i++) {
         sliderItems[i].style.width = ITEM_WIDTH + 'px';
     }
-    console.log((VIEW_ITEM_COUNT - itemsCount) * ITEM_WIDTH);
     nextButton.addEventListener('click', function () {
-        if (position > (VIEW_ITEM_COUNT - itemsCount) * ITEM_WIDTH) {
-            position -= ITEM_WIDTH;
-            weatherList.style.left = position + 'px';
+        prevButton.removeAttribute('disabled');
+        position -= ITEM_WIDTH;
+        weatherList.style.left = position + 'px';
+        if (position === (VIEW_ITEM_COUNT - itemsCount) * ITEM_WIDTH) {
+            nextButton.setAttribute('disabled', '');
         }
     });
     prevButton.addEventListener('click', function () {
-        if (position < 0) {
-            position += ITEM_WIDTH;
-            weatherList.style.left = position + 'px';
+        nextButton.removeAttribute('disabled');
+        position += ITEM_WIDTH;
+        weatherList.style.left = position + 'px';
+        if (position === 0) {
+            prevButton.setAttribute('disabled', '');
         }
     })
 }
