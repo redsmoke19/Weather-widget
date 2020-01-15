@@ -101,7 +101,6 @@ let weatherData = [
 ];
 
 let headerDay = document.querySelector('#day');
-let headerWeek = document.querySelector('#week');
 
 let weatherList = document.querySelector('.widget__list');
 let weatherTemplate = document.querySelector('#weather-template').content.querySelector('.widget__item');
@@ -113,8 +112,7 @@ function getWeatherItem(object) {
     if (object.current) {
         weatherElementDay.textContent = 'Сегодня';
         weatherElementDay.classList.add('widget__day--current');
-        headerDay.textContent = widgetDate.getDate() + ' ' + ' ' + MONTH[widgetDate.getMonth()] + ',';
-        headerWeek.textContent = WEEK_DAY[widgetDate.getDay()];
+        headerDay.textContent = widgetDate.getDate() + ' ' + ' ' + MONTH[widgetDate.getMonth()] + ', ' + WEEK_DAY[widgetDate.getDay()].toLowerCase();
     } else {
         weatherElementDay.textContent = WEEK_DAY[widgetDate.getDay()];
     }
@@ -136,13 +134,10 @@ for (let i = 0; i < weatherData.length; i++) {
 weatherList.appendChild(fragment);
 
 const ITEM_WIDTH = 250;
-const ITEM_HEIGHT = 360;
 const VIEW_ITEM_COUNT = 4;
-
 
 function moveSlider() {
     let itemsCount = weatherData.length;
-    let sliderWrapper = ITEM_WIDTH * VIEW_ITEM_COUNT;
     let sliderItems = document.querySelectorAll('.widget__item');
     let prevButton = document.querySelector('[data-way="prev"]');
     let nextButton = document.querySelector('[data-way="next"]');
