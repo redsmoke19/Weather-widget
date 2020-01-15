@@ -81,10 +81,18 @@ ul, li {
     width: 100%;
 }
 
+.slider {
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+}
+
 .widget__list {
     display: flex;
-    width: 100%;
-    overflow: hidden;
+    position: absolute;
+    transition: all ease 0.4s;
+    top: 0;
 }
 
 .widget__item {
@@ -94,9 +102,7 @@ ul, li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* margin: 0 5px; */
     padding: 20px 40px 30px;
-    width: 25%;
     flex-shrink: 0;
 }
 
