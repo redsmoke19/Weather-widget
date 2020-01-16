@@ -16,8 +16,8 @@ let weatherData = [
     {
         date: 1578945600000,
         temperature: {
-            day: 3,
-            night: 1,
+            day: -3,
+            night: -1,
         },
         cloudiness: 'Ясно',
         precipitation: {
@@ -29,8 +29,8 @@ let weatherData = [
     {
         date: 1579032000000,
         temperature: {
-            day: 1,
-            night: 3,
+            day: -1,
+            night: -3,
         },
         cloudiness: 'Облачно',
         precipitation: {
@@ -41,8 +41,8 @@ let weatherData = [
     {
         date: 1579118400000,
         temperature: {
-            day: 2,
-            night: 4,
+            day: -2,
+            night: -4,
         },
         cloudiness: 'Ясно',
         precipitation: {
@@ -53,8 +53,8 @@ let weatherData = [
     {
         date: 1579204800000,
         temperature: {
-            day: 5,
-            night: 7,
+            day: -5,
+            night: -7,
         },
         cloudiness: 'Облачно',
         precipitation: {
@@ -65,8 +65,8 @@ let weatherData = [
     {
         date: 1579291200000,
         temperature: {
-            day: 4,
-            night: 2,
+            day: -4,
+            night: -2,
         },
         cloudiness: 'Ясно',
         precipitation: {
@@ -77,8 +77,8 @@ let weatherData = [
     {
         date: 1579377600000,
         temperature: {
-            day: 10,
-            night: 19,
+            day: -10,
+            night: -19,
         },
         cloudiness: 'Ясно',
         precipitation: {
@@ -89,8 +89,8 @@ let weatherData = [
     {
         date: 1579464000000,
         temperature: {
-            day: 7,
-            night: 11,
+            day: -7,
+            night: -11,
         },
         cloudiness: 'Облачно',
         precipitation: {
@@ -112,13 +112,13 @@ function getWeatherItem(object) {
     if (object.current) {
         weatherElementDay.textContent = 'Сегодня';
         weatherElementDay.classList.add('widget__day--current');
-        headerDay.textContent = widgetDate.getDate() + ' ' + ' ' + MONTH[widgetDate.getMonth()] + ', ' + WEEK_DAY[widgetDate.getDay()].toLowerCase();
+        headerDay.textContent = widgetDate.getDate() + ' ' + MONTH[widgetDate.getMonth()] + ', ' + WEEK_DAY[widgetDate.getDay()].toLowerCase();
     } else {
         weatherElementDay.textContent = WEEK_DAY[widgetDate.getDay()];
     }
     weatherElement.querySelector('.widget__date').textContent = widgetDate.getDate() + ' ' + MONTH[widgetDate.getMonth()];
-    weatherElement.querySelector('.widget__temperature-day').textContent = `днем -${object.temperature.day}°`;
-    weatherElement.querySelector('.widget__temperature-night').textContent = `ночью -${object.temperature.night}°`;
+    weatherElement.querySelector('.widget__temperature-day').textContent = `днем ${object.temperature.day}°`;
+    weatherElement.querySelector('.widget__temperature-night').textContent = `ночью ${object.temperature.night}°`;
     weatherElement.querySelector('.widget__cloudiness').textContent = object.cloudiness;
     let weatherPrecipitation = weatherElement.querySelector('.widget__precipitation');
     weatherPrecipitation.textContent = object.precipitation.snow ? 'Снег' : object.precipitation.rain ? 'Дождь' : 'Без осадков';
